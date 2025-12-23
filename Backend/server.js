@@ -21,12 +21,11 @@ app.use(cors())
 
 //DB connection
 mongoose.connect(process.env.MONGO_URI)
-    .then(()=> {
-        app.listen(process.env.PORT, () =>{
-            console.log("DB connected & server running");
-        });
-    })
+    .then(() => console.log("DB connected"))
     .catch((error) => console.log(error));
+
+module.exports = app;
+
 
     app.use('/api/tasks', taskRoutes)
 
