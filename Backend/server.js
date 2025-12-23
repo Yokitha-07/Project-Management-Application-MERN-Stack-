@@ -13,20 +13,27 @@ app.use((req,res,next)=>{
 
 app.use(express.json());
 
-app.use(cors())
+app.use(cors({
+    origin: "*", // Allow all frontend origins
+    methods: ["GET","POST","PATCH","DELETE","OPTIONS"],
+    allowedHeaders: ["Content-Type","Authorization"]
+}));
 
 /* app.get('/',(req,res)=>{          //api
     res.send("Hello World");
 }); */
+
+app.use('/api/tasks', taskRoutes)
 
 //DB connection
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("DB connected"))
     .catch((error) => console.log(error));
 
+
 module.exports = app;
 
 
-    app.use('/api/tasks', taskRoutes)
+    
 
 
