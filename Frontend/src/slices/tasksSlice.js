@@ -7,7 +7,7 @@ const initialState = {
     error:''
 }
 
-const BASE_URL = 'https://task-backend.vercel.app/api/tasks'
+const BASE_URL = 'https://mern-stackbackend-l3qzu2poz-yokitha-07s-projects.vercel.app/api/tasks'
 
 
 //GET
