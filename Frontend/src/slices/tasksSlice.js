@@ -7,7 +7,8 @@ const initialState = {
     error:''
 }
 
-const BASE_URL = 'http://localhost:4000/api/tasks'
+const BASE_URL = 'https://task-backend.vercel.app/api/tasks'
+
 
 //GET
 export const getTasksFromServer = createAsyncThunk(
